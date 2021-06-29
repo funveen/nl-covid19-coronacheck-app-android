@@ -2,7 +2,7 @@
 
 **I have set up this repository to help people who don't have access to the Google Play Store on their Android phones, but who would like to use the Dutch CoronaCheck app. Any deviation from the upstream repository or guidance given below comes without warranty. Use at your own risk!**
 
-The app might be distributed on other channels (e.g. F-Droid) in the future. There is an issue discussing this in upstream minvws/nl-covid19-coronacheck-app-android#24
+The app might be distributed on other channels (e.g. F-Droid) in the future. There is an issue discussing this in upstream [minvws/nl-covid19-coronacheck-app-android#24](https://github.com/minvws/nl-covid19-coronacheck-app-android/issues/24)
 
 ## Introduction
 This repository contains a **fork** of the Android prototype of the Dutch COVID-19 CoronaCheck project. 
