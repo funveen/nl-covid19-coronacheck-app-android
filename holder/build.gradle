@@ -10,6 +10,10 @@ def appVersionCode = System.getenv("GITHUB_RUN_NUMBER") != null ? System.getenv(
 version = "2.0.3"
 archivesBaseName = "holder-v${version}-${appVersionCode}"
 
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
     testOptions {
         unitTests {
@@ -49,10 +53,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('../keystore.jks')
-            storePassword System.getenv("KEYSTORE_PASSWORD")
-            keyAlias System.getenv("KEYSTORE_KEY_ALIAS")
-            keyPassword System.getenv("KEYSTORE_KEY_PASSWORD")
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
         }
     }
 
